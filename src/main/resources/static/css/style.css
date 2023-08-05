@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    padding: 1em;
+}
+
+.message-list {
+    list-style: none;
+    padding: 0;
+}
+
+.message-list-item {
+    margin: 2em auto;
+}
+
+.message-data {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 0.25em;
+    display: inline;
+    padding: 0.5em;
+}
+
+.message-time {
+    display: inline;
+    font-family: monospace;
+    margin-left: 0.5em;
+}

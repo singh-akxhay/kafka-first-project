@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kafka Messenger Sample App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+</head>
+
+<body>
+<h1>Kafka Messages</h1>
+<ul id="message-list" class="message-list">
+    <li th:each="message : ${messages}" class="message-list-item">
+        <p class="message-data" th:text="${message.data}">this is a kafka message</p>
+        <p class="message-time" th:text="${message.publishedAt}">time</p>
+    </li>
+</ul>
+
+<div class="send-messsage-box">
+    <form th:action="@{/publishMessage}" th:object="${message}" method="post">
+        <input type="text" th:field="*{data}" id="messageData" name="message-data" placeholder="Send a message">
+        <button type="submit">Publish</button>
+    </form>
+</div>
+
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+<!-- <script type="text/javascript" src="js/script.js"></script> -->
+</body>
+
+</html>
