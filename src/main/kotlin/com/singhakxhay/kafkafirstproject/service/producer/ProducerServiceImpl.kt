@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 
-private const val TOPIC = "users"
+private const val TOPIC = "messages"
 
 @Service
 class ProducerServiceImpl : ProducerService {
     @Autowired
-    private lateinit var kafkaTemplate: KafkaTemplate<String, String>
+    private lateinit var kafkaTemplate: KafkaTemplate<String, Message>
 
     override fun sendMessage(message: Message) {
-        kafkaTemplate.send(TOPIC, message.data)
+        kafkaTemplate.send(TOPIC, message)
     }
 }
